@@ -1,0 +1,9 @@
+FROM node:latest
+ADD . /app
+WORKDIR /app
+#COPY ./package.json .
+RUN npm install
+#RUN npm install -g pm2
+#ADD . .
+#RUN pm2 start  bin/www  -i 0
+CMD ["npm", "start"]

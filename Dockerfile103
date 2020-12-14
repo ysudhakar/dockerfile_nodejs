@@ -1,0 +1,6 @@
+FROM node:10
+ADD . /app
+WORKDIR /app
+RUN npm ci
+#RUN pm2 start  bin/www  -i 0
+CMD ["npm", "start"]
