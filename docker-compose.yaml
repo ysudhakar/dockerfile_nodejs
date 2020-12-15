@@ -1,0 +1,17 @@
+version: '3'
+services:
+  nodejs-server:
+    hostname: nodejs-server
+    image: sudhakary/nordson_backend:latest
+    entrypoint: ["npm", "start"]
+    ports:
+      - "3000:3000"
+  angular-ui:
+    hostname: angular-ui
+    ports:
+      - "4200:4200"
+    image: sudhakary/nordsonomu_web:latest
+    depends_on: 
+      - nodejs-server
+    entrypoint: ["ng", "serve","--host", "0.0.0.0", "--port", "4200"]
+
