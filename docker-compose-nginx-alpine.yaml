@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nodejs-server:
+    hostname: nodejs-server
+    image: sudhakary/node_backend_10_alpine_py:latest
+    entrypoint: ["npm", "start"]
+    ports:
+      - "3000:3000"
+  angular-ui:
+    hostname: angular-ui
+    ports:
+      - "80:80"
+    image: sudhakary/ngnix_web_10_19_alpine:latest
+    depends_on: 
+      - nodejs-server
+
