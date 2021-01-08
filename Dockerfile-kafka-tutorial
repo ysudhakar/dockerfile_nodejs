@@ -1,0 +1,7 @@
+FROM openjdk
+#http://cloudurable.com/blog/kafka-tutorial-kafka-from-command-line/index.html
+#http://mirror.cc.columbia.edu/pub/software/apache/kafka/2.7.0/kafka_2.12-2.7.0.tgz
+COPY kafka_2.12-2.7.0 /home/kafka-tutorial/
+WORKDIR /home/kafka-tutorial/bin/
+SHELL ["/bin/bash", "-c"]
+RUN echo I am now using bash!
